@@ -10,7 +10,7 @@
 using namespace std;
 double etox_5_terms(double x) {
   // TODO - Your code here
-  return 1 + x + x * x / 2 + x * x * x / 3 * 2 + x * x * x * x / 4 * 3 * 2;
+  return 1 + x + x * x / 2 + x * x * x / (3 * 2) + x * x * x * x / (4 * 3 * 2);
 }
 int main(int argc, char **argv) {
   string user_input;
