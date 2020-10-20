@@ -10,6 +10,8 @@
 #define Pet_h
 #include <vector>
 
+#include <vector>
+
 using namespace std;
 
 class Pet
