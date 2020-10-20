@@ -12,11 +12,17 @@ size_t Pet::_population = 0;
 Pet::Pet(string name, long id, int num_limbs)
 {
     // TODO - Your code here
+    _name = name;
+    _id = id;
+    _num_limbs = num_limbs;
+    _population += 1;
 }
 Pet::~Pet()
 {
     // TODO - Your code here
+    _population -= 1;
 }
+
 string Pet::get_name() const { return _name; }
 long Pet::get_id() const
 {
