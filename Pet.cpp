@@ -26,27 +26,42 @@ Pet::~Pet()
 string Pet::get_name() const { return _name; }
 long Pet::get_id() const
 {
-    // TODO - Your code here
+  // TODO - Your code here
+  return _id;
 }
 int Pet::get_num_limbs() const
 {
     // TODO - Your code here
+    return _num_limbs;
 }
 bool Pet::set_name(string name)
 {
     // TODO - Your code here
+    _name = name;
 }
 bool Pet::set_id(long id)
 {
     // TODO - Your code here
+    _id = id;
 }
 bool Pet::set_num_limbs(int num_limbs)
 {
     // TODO - Your code here
+    _num_limbs = num_limbs;
 }
 string Pet::to_string() const
 {
     // TODO - Your code here
+    string toString;
+    toString = "(Name: [";
+    toString.append(_name);
+    toString.append("], ID: [");
+    toString.append(std::to_string(_id));
+    toString.append("], Limb Count: [");
+    toString.append(std::to_string(_num_limbs));
+    toString.append("])");
+    return toString;
+    // "(Name: [NAME], ID: [ID], Limb Count: [NUMBER OF LIMBS])"
 }
 // Fill in the supplied pets vector with n pets whose
 // properties are chosen randomly.
@@ -74,15 +89,17 @@ string Pet::make_a_name(int len)
     int i = 0;
     int start = rand() % 2;
     while (len > i) {
-        if ((start + i) % 2 == 0)
-        {
-            name.append(1, vowels[rand() % 5]);
-        }
-        else
-        {
-            name.append(1, consonants[rand() % 5]);
-        }
+      if ((start + i) % 2 == 0)
+      {
+          name.append(1, vowels[rand() % 5]);
+      }
+      else
+      {
+          name.append(1, consonants[rand() % 5]);
+      }
+      i++;
     }
+    return name;
 }
 // Optional EC points
 // Global helpers
