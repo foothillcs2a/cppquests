@@ -1,15 +1,14 @@
 #include <iostream>
-#include "Eliza.h"
+#include <ctime>
+#include "Pet.h"
+#include <cstdlib>
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    cout << lispify("the handsome man ran with no handsome mat") << "\n";
-    cout << lispify2("the hungry rainbow kissed with the yummy wise gal") << "\n";
-    cout << lispify2("no hot wise guy kissed in no handsome cat") << "\n";
-
-    string s = "that's really cool";
-    cout << rotate_vowels(s) << "\n";
-    enter();
+    std::srand(std::time(0)); //use current time as seed for random generator
+    int random_variable = std::rand();
+    std::cout << "Random value on [0 " << RAND_MAX << "]: "
+              << random_variable << '\n';
     return 0;
 }
