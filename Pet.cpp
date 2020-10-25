@@ -134,11 +134,11 @@ string Pet::make_a_name(int len)
     while (len > i) {
       if ((start + i) % 2 == 0)
       {
-          name.append(1, vowels[rand() % 5]);
+          name.append(1, consonants[rand() % 5]);
       }
       else
       {
-          name.append(1, consonants[rand() % 5]);
+          name.append(1, vowels[rand() % 5]);
       }
       i++;
     }
