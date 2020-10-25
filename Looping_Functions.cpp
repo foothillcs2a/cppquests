@@ -11,6 +11,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
+#include <stdexcept>
+#include <limits>
 using namespace std;
 // Give the user 6 chances to guess the secret number n (0-10). If they get it,
 // say so and return true. Else say so and return false.
@@ -20,7 +22,7 @@ bool play_game(int n) {
   int sd;
   cout << "Welcome to my number guessing game\n\n";
   for (int i = 1; i <= 6; i++) {
-    cout << "Enter your guess: ";
+    cout << "Enter your guess: \n";
     cin >> sd;
     // float x = 0;
     // sd >> x;
@@ -80,7 +82,7 @@ string get_ap_terms(int a, int d, size_t n) {
   if (n>0) result += temp;
   while (i<n) {
     result += ",";
-    sprintf(temp,"%d", (int)a+d*i);
+    sprintf(temp,"%d", (int)(a+d*i));
     result += temp;
     i++;
   }
