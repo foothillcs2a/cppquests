@@ -21,10 +21,12 @@ bool play_game(int n) {
   cout << "Welcome to my number guessing game\n\n";
   for (int i = 1; i <= 6; i++) {
     cout << "Enter your guess: ";
+    cin.clear(); // clears the error flags
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     cin >> sd;
     // float x = 0;
     // sd >> x;
-    // if (x.good())
+    // if (x.good())  
     cout << "You entered: " << sd << "\n";
     if (sd == n) {
       cout << "You found it in " << i << " guess(es).\n";
