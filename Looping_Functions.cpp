@@ -14,19 +14,24 @@
 using namespace std;
 // Give the user 6 chances to guess the secret number n (0-10). If they get it,
 // say so and return true. Else say so and return false.
+
 bool play_game(int n) {
   // TODO - Your code here
   int sd;
   cout << "Welcome to my number guessing game\n\n";
   for (int i = 1; i <= 6; i++) {
-    cout << "Enter your guess: \n";
+    cout << "Enter your guess: ";
     cin >> sd;
+    // float x = 0;
+    // sd >> x;
+    // if (x.good())
     cout << "You entered: " << sd << "\n";
     if (sd == n) {
       cout << "You found it in " << i << " guess(es).\n";
       return true;
     }
   }
+  cout << endl;
   cout << "\nI'm sorry. You didn't fnd my number.\n";
   cout << "it was " << n << "\n";
   return false;
