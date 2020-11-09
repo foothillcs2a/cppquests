@@ -16,13 +16,13 @@ Pet::Pet(string name, long id, int num_limbs)
     _id = id;
     _num_limbs = num_limbs;
     _population += 1;
-    //cout<<"New Pet created, now: " << _population << endl ;
+    cout<<"New Pet created, now: " << _population << endl ;
 }
 Pet::~Pet()
 {
     // TODO - Your code here
     _population -= 1;
-    //cout<<"Existing Pet deleted, now: " << _population << endl ;
+    cout<<"Existing Pet deleted, now: " << _population << endl ;
 
 }
 
