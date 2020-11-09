@@ -40,5 +40,15 @@ int main(int argc, char const *argv[])
       cout<<pets[i].get_name()<<endl;
     }
     cout<<"Pets Population to get 6 pets with 6 letters: " << Pet::get_population()<<endl;
+    cout<<"===================="<<endl;
+    cout<<"my pet is: " << mypet.to_string() <<" change name 7 letters "<<endl;
+    mypet.set_name(Pet::make_a_name(7));
+    cout<<"my pet is: " << mypet.to_string() <<" change name to empty "<<endl;
+    mypet.set_name("");
+    cout<<"my pet is: " << mypet.to_string() <<" change id to 22 "<<endl;
+    mypet.set_id(22);
+    cout<<"my pet is: " << mypet.to_string() <<" change id to -1 "<<endl;
+    mypet.set_id(-1);
+    cout<<"my pet is: " << mypet.to_string() <<" done. "<<endl;
     return 0;
 }

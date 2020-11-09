@@ -39,42 +39,39 @@ int Pet::get_num_limbs() const
 }
 bool Pet::set_name(string name)
 {
-    // TODO - Your code here
-  try{
+  // TODO - Your code here
+  if (name.length()>0){
     _name = name;
     return true;
   }
-  catch(int e){
-    cout<< "Exception caught: "<<e<<endl;
+  else{
+    // cout<< "cannot set name to be empty "<<endl;
     return false;
   }
-  return true;
 }
 bool Pet::set_id(long id)
 {
   // TODO - Your code here
-  try{
+  if (id>=0){
     _id = id;
     return true;
   }
-  catch(int e) {
-    cout<< "Exception caught: "<<e<<endl;
+  else{
+    // cout<< "cannot set id to be negative "<<endl;
     return false;
   }
-  return true;
 }
 bool Pet::set_num_limbs(int num_limbs)
 {
     // TODO - Your code here
-  try{
-    _num_limbs = num_limbs;
+  if (num_limbs>=0){
+    num_limbs = _num_limbs;
     return true;
   }
-  catch(int e) {
-    cout<< "Exception caught: "<<e<<endl;
+  else{
+    // cout<< "cannot set num of limbs to be negative "<<endl;
     return false;
   }
-  return true;
 }
 string Pet::to_string() const
 {
@@ -124,7 +121,7 @@ void Pet::get_n_pets(size_t n, std::vector<Pet> &pets, int name_len)
     }
 }
 // ---------------------------------------------------------------------
-Pet::make_a_name(int len)
+string Pet::make_a_name(int len)
 {
     // TODO - Your code here
     string vowels("aeiou");
