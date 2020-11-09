@@ -26,10 +26,3 @@ void draw_cat() {
   cout <<" -------\n";
   cout <<"Schrodinger\n";
 }
-
-int main(int argc, const char * argv[]) {
-// TODO - Invoke your function from here.
-// I'll invoke your main()
-draw_cat();
-return 0;
-}

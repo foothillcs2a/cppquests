@@ -78,11 +78,11 @@ string get_ap_terms(int a, int d, size_t n) {
   string result = "";
   size_t i = 1;
   char temp[100];
-  sprintf(temp,"%d", a);
+  sprintf_s(temp,"%d", a);
   if (n>0) result += temp;
   while (i<n) {
     result += ",";
-    sprintf(temp,"%d", (int)(a+d*i));
+    sprintf_s(temp,"%d", (int)(a+d*i));
     result += temp;
     i++;
   }
@@ -94,11 +94,11 @@ string get_gp_terms(double a, double r, size_t n) {
   string result = "";
   size_t i = 1;
   char temp[100];
-  sprintf(temp,"%g", a);
+  sprintf_s(temp,"%g", a);
   if (n>0) result += temp;
   while (i<n) {
     result += ",";
-    sprintf(temp,"%g", a*pow(r,i));
+    sprintf_s(temp,"%g", a*pow(r,i));
     result += temp;
     i++;
   }

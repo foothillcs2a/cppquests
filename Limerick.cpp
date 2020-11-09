@@ -17,18 +17,18 @@ double eval_limerick(int dozen, int gross, int score) {
 // various values from a batch file. You don't have to know the details for
 // CS2A, but you're welcome to - Discuss in the forums any aspect of this
 // program you don't understand.
-int main(int argc, char **argv) {
-  int dozen, gross, score;
-  if (argc < 4) {
-    cerr << "Usage: limerick dozen-val gross-val score-val\n";
-    exit(1);
-  }
-  istringstream(argv[1]) >> dozen;
-  istringstream(argv[2]) >> gross;
-  istringstream(argv[3]) >> score;
-  // Invoke the eval_limerick function correctly and print the result
-  // with a single newline at the end of the line.
-  // TODO - Your code here
-  cout << eval_limerick(dozen, gross, score) << "\n";
-  return 0;
-}
+//int main(int argc, char **argv) {
+//  int dozen, gross, score;
+//  if (argc < 4) {
+//    cerr << "Usage: limerick dozen-val gross-val score-val\n";
+//    exit(1);
+//  }
+//  istringstream(argv[1]) >> dozen;
+//  istringstream(argv[2]) >> gross;
+//  istringstream(argv[3]) >> score;
+//  // Invoke the eval_limerick function correctly and print the result
+//  // with a single newline at the end of the line.
+//  // TODO - Your code here
+//  cout << eval_limerick(dozen, gross, score) << "\n";
+//  return 0;
+//}

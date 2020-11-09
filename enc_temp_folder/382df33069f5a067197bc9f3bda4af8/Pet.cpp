@@ -124,7 +124,7 @@ void Pet::get_n_pets(size_t n, std::vector<Pet> &pets, int name_len)
     }
 }
 // ---------------------------------------------------------------------
-Pet::make_a_name(int len)
+string Pet::make_a_name(int len)
 {
     // TODO - Your code here
     string vowels("aeiou");

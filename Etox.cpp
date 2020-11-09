@@ -12,13 +12,3 @@ double etox_5_terms(double x) {
   // TODO - Your code here
   return 1 + x + x * x / 2 + x * x * x / (3 * 2) + x * x * x * x / (4 * 3 * 2);
 }
-int main(int argc, char **argv) {
-  string user_input;
-  double x;
-  cout << "Enter a value for x: ";
-  getline(cin, user_input);
-  istringstream(user_input) >> x;
-  // TODO - Your code here
-  cout << etox_5_terms(x) << "\n";
-  return 0;
-}

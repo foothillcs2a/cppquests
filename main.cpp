@@ -14,9 +14,9 @@ int main(int argc, char const *argv[])
     cout<<"Initial Pets Population: " << Pet::get_population()<<endl;
     Pet mypet;
     cout<<"Pets Population after allocated one: " << Pet::get_population()<<endl;
-    mypet.make_a_name(4);
-    cout<<"Pets Population after make name 4: " << Pet::get_population()<<endl;
-    //cout<< Pet::make_a_name(4)<<endl;
+    mypet.make_a_name(1);
+    cout<<"Pets Population after make name 1: " << Pet::get_population()<<endl;
+    cout<< "It is: " << mypet.to_string()<<endl;
     vector<Pet> pets;
     cout<<"Pets Population after vector defined: " << Pet::get_population()<<endl;
 
