@@ -32,3 +32,6 @@
 *.app
 /.vs
 main
+
+/Debug
+/Release

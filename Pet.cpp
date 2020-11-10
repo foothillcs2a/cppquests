@@ -16,13 +16,11 @@ Pet::Pet(string name, long id, int num_limbs)
 	_id = id;
 	_num_limbs = num_limbs;
 	_population += 1;
-	//cout<<"New Pet created, now: " << _population << endl ;
 }
 Pet::~Pet()
 {
 	// TODO - Your code here
 	_population -= 1;
-	//cout<<"Existing Pet deleted, now: " << _population << endl ;
 
 }
 
@@ -45,7 +43,6 @@ bool Pet::set_name(string name)
 		return true;
 	}
 	else {
-		// cout<< "cannot set name to be empty "<<endl;
 		return false;
 	}
 }
@@ -57,7 +54,6 @@ bool Pet::set_id(long id)
 		return true;
 	}
 	else {
-		// cout<< "cannot set id to be negative "<<endl;
 		return false;
 	}
 }
@@ -69,7 +65,6 @@ bool Pet::set_num_limbs(int num_limbs)
 		return true;
 	}
 	else {
-		// cout<< "cannot set num of limbs to be negative "<<endl;
 		return false;
 	}
 }
@@ -85,7 +80,6 @@ string Pet::to_string() const
 	toString.append(std::to_string(_num_limbs));
 	toString.append(")");
 	return toString;
-	// "(Name: [NAME], ID: [ID], Limb Count: [NUMBER OF LIMBS])"
 }
 // Fill in the supplied pets vector with n pets whose
 // properties are chosen randomly.
@@ -95,22 +89,11 @@ void Pet::get_n_pets(size_t n, std::vector<Pet>& pets, int name_len)
 	// TODO - Resize pets as necessary
 	pets.resize(0);
 	if (pets.size() != n) {
-		// if (pets.size()>n){
-		//   for (int i=n-1;i>=pets.size();i--){
-		//     pets.erase(pets.begin()+i);
-		//   }
-		// }else{
-		//   for (int i=pets.size();i<n;i++){
-		//     Pet *newpet = new Pet("Sample", 1, 1);
-		//     pets.push_back(*newpet);
-		//   }
-		// }
 		pets.resize(n);
 	}
 	long prev_id = 0;
 	for (size_t i = 0; i < n; i++)
 	{
-		//pets[i] = new Pet();
 		long id = prev_id + 1 + rand() % 10;
 		pets[i].set_id(id);
 		pets[i].set_num_limbs(rand() % 9); // up to arachnids
@@ -130,38 +113,20 @@ string Pet::make_a_name(int len)
 	int firstRand = rand();
 	int firstLetter = firstRand % 2;
 
-	//if (firstLetter == 1) {
-	//	cout << "Pick one Vowel as first letter" << endl;
-	//}
-	//else {
-	//	cout << "Pick one Consonants as first letter" << endl;
-	//}
-
 	for (int i = 0; i < len; i++) {
-		//double nextLetter = ((double)rand() / (RAND_MAX));
-
-		////cout << "Random value of Next letter is: " << nextLetter << endl;
-
-		//int pickConsonant = nextLetter * consonants.length() ;
-		//int pickVowel = nextLetter * vowels.length();
 
 		if (firstLetter == 0)
 		{
-			//cout << "Pick letter " << i << " consonants no. " << pickConsonant << endl;
 			name += consonants[rand()% consonants.length()];
 		}
 		else
 		{
-			//cout << "Odd letter is going to pick vowels no. " << pickVowel << endl;
 			name+= vowels[rand() % vowels.length()];
 		}
 		firstLetter = !firstLetter;
 	}
-	//cout << "The name is: " << name << endl;
 	return name;
 }
-// Optional EC points
-// Global helpers
 bool operator==(const Pet& pet1, const Pet& pet2)
 {
 	// TODO - Your code here
