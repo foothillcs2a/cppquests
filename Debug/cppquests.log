@@ -1,6 +1,4 @@
-﻿  main.cpp
-c:\play\cppquests\main.cpp(10,16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\play\cppquests\main.cpp(24,21): warning C4018: '<': signed/unsigned mismatch
-c:\play\cppquests\main.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
-c:\play\cppquests\main.cpp(38,21): warning C4018: '<': signed/unsigned mismatch
+﻿  Pet.cpp
+c:\play\cppquests\Pet.cpp(146,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\play\cppquests\Pet.cpp(147,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   cppquests.vcxproj -> c:\play\cppquests\Debug\cppquests.exe

@@ -4,51 +4,53 @@
 #include <cstdlib>
 using namespace std;
 
-int main(int argc, char const *argv[])
+int main(int argc, char const* argv[])
 {
 
-    srand (time(NULL));
-    int random_variable = std::rand();
+	srand(time(NULL));
+	int random_variable = std::rand();
 
-    std::cout << "Random value on [0 " << RAND_MAX << "]: " << random_variable << '\n';
-    cout<<"Initial Pets Population: " << Pet::get_population()<<endl;
-    Pet mypet;
-    cout<<"Pets Population after allocated one: " << Pet::get_population()<<endl;
-    mypet.make_a_name(1);
-    cout<<"Pets Population after make name 1: " << Pet::get_population()<<endl;
-    cout<< "It is: " << mypet.to_string()<<endl;
-    vector<Pet> pets;
-    cout<<"Pets Population after vector defined: " << Pet::get_population()<<endl;
+	//std::cout << "Random value on [0 " << RAND_MAX << "]: " << random_variable << '\n';
+	//cout<<"Initial Pets Population: " << Pet::get_population()<<endl;
+	//cout<<"Pets Population after allocated one: " << Pet::get_population()<<endl;
+	//cout<<"Pets Population after make name 1: " << Pet::get_population()<<endl;
+	cout << "1 letter name is: " << Pet::make_a_name(1) << endl;
+	cout << "5 letters name is: " << Pet::make_a_name(5) << endl;
+	//     Pet mypet;
+		// cout << "It is: " << mypet.to_string() << endl;
 
-    Pet::get_n_pets(4,pets,5);
-    for(int i = 0; i<pets.size();i++)
-    {
-      cout<<pets[i].get_name()<<endl;
-    }
-    cout<<"Pets Population after get 4 pets with 5 letters name : " << Pet::get_population()<<endl;
+		//vector<Pet> pets;
+		//cout<<"Pets Population after vector defined: " << Pet::get_population()<<endl;
 
-    Pet::get_n_pets(2,pets,9);
-    for(int i = 0; i<pets.size();i++)
-    {
-      cout<<pets[i].get_name()<<endl;
-    }
-    cout<<"Pets Population resize vector to get 2 pets with 9 letter names: " << Pet::get_population()<<endl;
+		//Pet::get_n_pets(4,pets,5);
+		//for(int i = 0; i<pets.size();i++)
+		//{
+		//  cout<<pets[i].get_name()<<endl;
+		//}
+		//cout<<"Pets Population after get 4 pets with 5 letters name : " << Pet::get_population()<<endl;
 
-    Pet::get_n_pets(6,pets,6);
-    for(int i = 0; i<pets.size();i++)
-    {
-      cout<<pets[i].get_name()<<endl;
-    }
-    cout<<"Pets Population to get 6 pets with 6 letters: " << Pet::get_population()<<endl;
-    cout<<"===================="<<endl;
-    cout<<"my pet is: " << mypet.to_string() <<" change name 7 letters "<<endl;
-    mypet.set_name(Pet::make_a_name(7));
-    cout<<"my pet is: " << mypet.to_string() <<" change name to empty "<<endl;
-    mypet.set_name("");
-    cout<<"my pet is: " << mypet.to_string() <<" change id to 22 "<<endl;
-    mypet.set_id(22);
-    cout<<"my pet is: " << mypet.to_string() <<" change id to -1 "<<endl;
-    mypet.set_id(-1);
-    cout<<"my pet is: " << mypet.to_string() <<" done. "<<endl;
-    return 0;
+		//Pet::get_n_pets(2,pets,9);
+		//for(int i = 0; i<pets.size();i++)
+		//{
+		//  cout<<pets[i].get_name()<<endl;
+		//}
+		//cout<<"Pets Population resize vector to get 2 pets with 9 letter names: " << Pet::get_population()<<endl;
+
+		//Pet::get_n_pets(6,pets,6);
+		//for(int i = 0; i<pets.size();i++)
+		//{
+		//  cout<<pets[i].get_name()<<endl;
+		//}
+		//cout<<"Pets Population to get 6 pets with 6 letters: " << Pet::get_population()<<endl;
+		//cout<<"===================="<<endl;
+		//cout<<"my pet is: " << mypet.to_string() <<" change name 7 letters "<<endl;
+		//mypet.set_name(Pet::make_a_name(7));
+		//cout<<"my pet is: " << mypet.to_string() <<" change name to empty "<<endl;
+		//mypet.set_name("");
+		//cout<<"my pet is: " << mypet.to_string() <<" change id to 22 "<<endl;
+		//mypet.set_id(22);
+		//cout<<"my pet is: " << mypet.to_string() <<" change id to -1 "<<endl;
+		//mypet.set_id(-1);
+		//cout<<"my pet is: " << mypet.to_string() <<" done. "<<endl;
+	return 0;
 }
