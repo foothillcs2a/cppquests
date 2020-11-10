@@ -1,2 +1,0 @@
-c:\play\cppquests\Debug\cppquests.exe
-c:\play\cppquests\Debug\cppquests.pdb

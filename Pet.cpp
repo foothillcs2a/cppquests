@@ -65,7 +65,7 @@ bool Pet::set_num_limbs(int num_limbs)
 {
 	// TODO - Your code here
 	if (num_limbs >= 0) {
-		num_limbs = _num_limbs;
+		_num_limbs = num_limbs;
 		return true;
 	}
 	else {
@@ -77,13 +77,13 @@ string Pet::to_string() const
 {
 	// TODO - Your code here
 	string toString;
-	toString = "(Name: [";
+	toString = "(Name: ";
 	toString.append(_name);
-	toString.append("], ID: [");
+	toString.append(", ID: ");
 	toString.append(std::to_string(_id));
-	toString.append("], Limb Count: [");
+	toString.append(", Limb Count: ");
 	toString.append(std::to_string(_num_limbs));
-	toString.append("])");
+	toString.append(")");
 	return toString;
 	// "(Name: [NAME], ID: [ID], Limb Count: [NUMBER OF LIMBS])"
 }
@@ -117,13 +117,12 @@ void Pet::get_n_pets(size_t n, std::vector<Pet>& pets, int name_len)
 		// TODO - make and set a name of the requested length
 		pets[i].set_name(make_a_name(name_len));
 		// TODO - adjust prev_id as necessary
-		prev_id += 11;
+		prev_id = id;
 	}
 }
 // ---------------------------------------------------------------------
 string Pet::make_a_name(int len)
 {
-	// TODO - Your code here
 	string vowels("aeiou");
 	string consonants("bcdfghjklmnpqrstvwxyz");
 	string name;
@@ -131,31 +130,32 @@ string Pet::make_a_name(int len)
 	int firstRand = rand();
 	int firstLetter = firstRand % 2;
 
-	if (firstLetter == 1) {
-		cout << "Pick one Vowel as first letter" << endl;
-	}
-	else {
-		cout << "Pick one Consonants as first letter" << endl;
-	}
+	//if (firstLetter == 1) {
+	//	cout << "Pick one Vowel as first letter" << endl;
+	//}
+	//else {
+	//	cout << "Pick one Consonants as first letter" << endl;
+	//}
 
 	for (int i = 0; i < len; i++) {
-		double nextLetter = ((double)rand() / (RAND_MAX));
+		//double nextLetter = ((double)rand() / (RAND_MAX));
 
-		//cout << "Random value of Next letter is: " << nextLetter << endl;
+		////cout << "Random value of Next letter is: " << nextLetter << endl;
 
-		int pickConsonant = nextLetter * consonants.length() ;
-		int pickVowel = nextLetter * vowels.length();
+		//int pickConsonant = nextLetter * consonants.length() ;
+		//int pickVowel = nextLetter * vowels.length();
 
-		if ((firstLetter + i) % 2 == 0)
+		if (firstLetter == 0)
 		{
 			//cout << "Pick letter " << i << " consonants no. " << pickConsonant << endl;
-			name += consonants[pickConsonant];
+			name += consonants[rand()% consonants.length()];
 		}
 		else
 		{
 			//cout << "Odd letter is going to pick vowels no. " << pickVowel << endl;
-			name+= vowels[pickVowel];
+			name+= vowels[rand() % vowels.length()];
 		}
+		firstLetter = !firstLetter;
 	}
 	//cout << "The name is: " << name << endl;
 	return name;

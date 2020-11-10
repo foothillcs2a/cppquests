@@ -16,8 +16,13 @@ int main(int argc, char const* argv[])
 	//cout<<"Pets Population after make name 1: " << Pet::get_population()<<endl;
 	cout << "1 letter name is: " << Pet::make_a_name(1) << endl;
 	cout << "5 letters name is: " << Pet::make_a_name(5) << endl;
-	//     Pet mypet;
-		// cout << "It is: " << mypet.to_string() << endl;
+
+	Pet mypet;
+	mypet.set_name(Pet::make_a_name(6));
+	if (!mypet.set_num_limbs(371)) {
+		cout << "failed to set num limbs";
+	}
+	cout << "It is: " << mypet.to_string() << endl;
 
 		//vector<Pet> pets;
 		//cout<<"Pets Population after vector defined: " << Pet::get_population()<<endl;

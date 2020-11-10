@@ -1,4 +1,0 @@
-﻿  Pet.cpp
-c:\play\cppquests\Pet.cpp(146,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\play\cppquests\Pet.cpp(147,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  cppquests.vcxproj -> c:\play\cppquests\Debug\cppquests.exe
