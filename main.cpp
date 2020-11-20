@@ -1,61 +1,44 @@
 #include <iostream>
 #include <ctime>
-#include "Pet.h"
 #include <cstdlib>
+#include "Pet_Store.h"
+//#include "Tests.h"
+
 using namespace std;
 
 int main(int argc, char const* argv[])
 {
 
-	srand(time(NULL));
-	int random_variable = std::rand();
+	std::string firstlevel("com");
+	std::string secondlevel("cplusplus");
+	std::string scheme("http://");
+	std::string hostname;
+	std::string url;
 
-	//std::cout << "Random value on [0 " << RAND_MAX << "]: " << random_variable << '\n';
-	//cout<<"Initial Pets Population: " << Pet::get_population()<<endl;
-	//cout<<"Pets Population after allocated one: " << Pet::get_population()<<endl;
-	//cout<<"Pets Population after make name 1: " << Pet::get_population()<<endl;
-	cout << "1 letter name is: " << Pet::make_a_name(1) << endl;
-	cout << "5 letters name is: " << Pet::make_a_name(5) << endl;
+	hostname = "www." + secondlevel + '.' + firstlevel;
+	url = scheme + hostname;
 
-	Pet mypet;
-	mypet.set_name(Pet::make_a_name(6));
-	if (!mypet.set_num_limbs(371)) {
-		cout << "failed to set num limbs";
+	std::cout << url << '\n';
+	std::cout << 4 / 2 << endl;
+
+	Pet myPet;
+	myPet.set_id(10);
+	myPet.set_name("Meotwo");
+	Pet_Store myStore;
+	myStore.populate_with_n_random_pets(5);
+	std::cout << myStore.to_string(1, 5) << endl;
+	//Tests::add_pet(myStore, myPet);
+	if (myStore.find_pet_by_id_bin(10, myPet)) {
+		cout << myPet.to_string() << endl;
 	}
-	cout << "It is: " << mypet.to_string() << endl;
-
-		//vector<Pet> pets;
-		//cout<<"Pets Population after vector defined: " << Pet::get_population()<<endl;
-
-		//Pet::get_n_pets(4,pets,5);
-		//for(int i = 0; i<pets.size();i++)
-		//{
-		//  cout<<pets[i].get_name()<<endl;
-		//}
-		//cout<<"Pets Population after get 4 pets with 5 letters name : " << Pet::get_population()<<endl;
-
-		//Pet::get_n_pets(2,pets,9);
-		//for(int i = 0; i<pets.size();i++)
-		//{
-		//  cout<<pets[i].get_name()<<endl;
-		//}
-		//cout<<"Pets Population resize vector to get 2 pets with 9 letter names: " << Pet::get_population()<<endl;
-
-		//Pet::get_n_pets(6,pets,6);
-		//for(int i = 0; i<pets.size();i++)
-		//{
-		//  cout<<pets[i].get_name()<<endl;
-		//}
-		//cout<<"Pets Population to get 6 pets with 6 letters: " << Pet::get_population()<<endl;
-		//cout<<"===================="<<endl;
-		//cout<<"my pet is: " << mypet.to_string() <<" change name 7 letters "<<endl;
-		//mypet.set_name(Pet::make_a_name(7));
-		//cout<<"my pet is: " << mypet.to_string() <<" change name to empty "<<endl;
-		//mypet.set_name("");
-		//cout<<"my pet is: " << mypet.to_string() <<" change id to 22 "<<endl;
-		//mypet.set_id(22);
-		//cout<<"my pet is: " << mypet.to_string() <<" change id to -1 "<<endl;
-		//mypet.set_id(-1);
-		//cout<<"my pet is: " << mypet.to_string() <<" done. "<<endl;
+	else {
+		cout << "id 8 not found";
+	}
+	if (myStore.find_pet_by_name_bin("obihugu", myPet)) {
+		cout << myPet.to_string() << endl;
+	}
+	else {
+		cout << "name obihugu not found";
+	}
 	return 0;
 }

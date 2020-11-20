@@ -148,11 +148,15 @@
     <ClCompile Include="Looping_Functions.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pet.cpp" />
+    <ClCompile Include="Pet_Store.cpp" />
+    <ClCompile Include="Tests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Eliza.h" />
     <ClInclude Include="Looping_Functions.h" />
     <ClInclude Include="Pet.h" />
+    <ClInclude Include="Pet_Store.h" />
+    <ClInclude Include="Tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

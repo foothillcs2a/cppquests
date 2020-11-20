@@ -8,9 +8,6 @@
 // The Pet class also supports a static population member
 #ifndef Pet_h
 #define Pet_h
-#include <vector>
-
-#include <vector>
 
 using namespace std;
 

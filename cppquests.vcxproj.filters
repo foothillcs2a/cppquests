@@ -42,16 +42,28 @@
     <ClCompile Include="Pet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pet_Store.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Tests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Eliza.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Pet_Store.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Looping_Functions.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="Eliza.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pet.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Looping_Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tests.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
