@@ -65,5 +65,11 @@
     <ClInclude Include="Tests.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Stacks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="String_List.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

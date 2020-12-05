@@ -156,6 +156,8 @@
     <ClInclude Include="Looping_Functions.h" />
     <ClInclude Include="Pet.h" />
     <ClInclude Include="Pet_Store.h" />
+    <ClInclude Include="Stacks.h" />
+    <ClInclude Include="String_List.h" />
     <ClInclude Include="Tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
