@@ -29,36 +29,111 @@ private:
 public:
 	String_List() {
 		// TODO - Your code here
+		_head = _tail = _prev_to_current = new Node("_SENTINEL_");
+		_size = 0;
+		_head->next = nullptr;
 	}
 	~String_List() {
 		// TODO - Your code here
+		this->clear();
+		delete _head;
+		_head = _tail = _prev_to_current = nullptr;
 	}
 	String_List* insert_at_current(std::string s) {
 		// TODO - Your code here
+		Node* newCurrent = new Node(s);
+		_size++;
+
+		// set newCurrent->next to the yellow node, which is _prev_to_cu...->next
+		newCurrent->next = _prev_to_current->next;
+		// set the current pointer to new current
+		if (_tail == _prev_to_current) {
+			_tail = newCurrent;
+		}
+		if (_head == _prev_to_current) {
+			_head->next = newCurrent;
+		}
+
+		_prev_to_current->next = newCurrent;
+		return this;
 	}
 	String_List* push_back(std::string s) {
 		// TODO - Your code here
+		Node* temp = _prev_to_current;
+		_prev_to_current = _tail;
+		insert_at_current(s);
+		_prev_to_current = temp;
+		return this;
 	}
 	String_List* push_front(std::string s) {
 		// TODO - Your code here
+		Node* temp = _prev_to_current;
+		_prev_to_current = _head;
+		insert_at_current(s);
+		_prev_to_current = temp;
+		return this;
 	}
 	String_List* advance_current() {
 		// TODO - Your code here
+		if (_prev_to_current->next) {
+			_prev_to_current = _prev_to_current->next;
+			return this;
+		}
+		else {
+			return nullptr;
+		}
 	}
 	std::string get_current() const {
 		// TODO - Your code here
+		if (_prev_to_current->next) {
+			return _prev_to_current->next->data;
+		}
+		else
+		{
+			// ??? This doesn't make sense
+			return _prev_to_current->data;
+		}
 	}
 	String_List* remove_at_current() {
 		// TODO - Your code here
+		_size--;
+		Node* tmp = _prev_to_current->next;
+		_prev_to_current->next = tmp->next;
+		delete tmp;
+		return this;
 	}
 	size_t get_size() const {
 		// TODO - Your code here
+		return _size;
+		//Node* tmp = _head;
+		//size_t i = 0;
+		//while (tmp->next) {
+		//	i++;
+		//	tmp = tmp->next;
+		//}
+		//return i;
 	}
 	String_List* rewind() {
 		// TODO - Your code here
+		_prev_to_current = _head;
+		return this;
 	}
 	void clear() {
 		// TODO - Your code here
+		if (!_head->next) {
+			return;
+		}
+		Node* iter = _head->next;
+		Node* tmp;
+		while (iter->next) {
+			tmp = iter;
+			iter = iter->next;
+			delete tmp;
+		}
+		delete iter;
+		_size = 0;
+		_head->next = nullptr;
+		_tail = _prev_to_current = _head;
 	}
 	// Find a specific item. Does NOT change cursor.
 	//
@@ -70,12 +145,37 @@ public:
 	//
 	std::string& find_item(std::string s) const {
 		// TODO - Your code here
+		Node* iter = _head->next;
+		while (iter) {
+			if (iter->data == s) {
+				return iter->data;
+			}
+			iter = iter->next;
+		}
+		return _head->data;
 	}
 	// Print up to max_lines lines starting at _prev_to_current->next. If the caller
 	// wants to print from the beginning of the list, they should rewind() it first.
 	//
 	std::string to_string() const {
 		// TODO - Your code here
+		Node* iter = _prev_to_current->next;
+		size_t count = 0;
+		while (iter) {
+			count++;
+			iter = iter->next;
+		}
+
+		std::string out = "# String_List - " + std::to_string(count) + " entries total. Starting at cursor:\n";
+		size_t i = 0;
+		iter = _prev_to_current->next;
+		while (iter && i < 25) {
+			i = i + 1;
+			out = out + iter->data + "\n";
+			iter = iter->next;
+		}
+		if (count > 25) { out = out + "...\n"; }
+		return out;
 	}
 	friend class Tests; // Don't remove this line
 };
